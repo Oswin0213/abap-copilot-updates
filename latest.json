@@ -1,15 +1,15 @@
 {
-  "version": "1.0.1",
-  "notes": "v1.0.1 补丁版本。\r\n\r\n- 修复：安装后启动即闪退（reqwest 缺少 rustls crypto provider 导致启动 panic）\r\n- 修复：检查更新流程加固（多端点并行探测 + 整体超时，不再长时间转圈）\r\n\r\n覆盖安装即可升级，不会影响已有配置和激活状态。",
-  "pub_date": "2026-08-17T05:10:44.905Z",
+  "version": "1.0.2",
+  "notes": "v1.0.2 修复与优化合集。\r\n\r\n修复：\r\n- 模型名切换串会话：每会话独立模型名覆盖，A/B 会话互不影响\r\n- 手动重命名会话后不再被自动标题覆盖\r\n- 图片多模态校验改按会话绑定模型（之前按全局模型会误判）\r\n- 审计详情截断：工具结果完整存储，展开可看全部内容\r\n- 导出 PDF 无法在浏览器打开（Not allowed to open path）\r\n\r\n优化：\r\n- create 创建对象源码被 WAF 拦截时，AI 自动改用 edit 补写完整源码\r\n- 页签统一宽度、关闭按钮常显且固定最右侧；「全部页签」下拉带会话图标、激活页签自动滚入视野\r\n- @ 引用文件后输入框插入文件路径文字，提示词可点名具体文件\r\n- 空会话显示示例卡片（卡片直接预填输入框），不再一片空白\r\n- Toast 移到右下角，不再遮挡页签与窗口按钮\r\n- 获取模型列表不再强制先配 API Key\r\n\r\n新增：\r\n- 左侧会话列表可整列隐藏（标题行收起、细条展开）\r\n- 模型 API Key / 系统密码字段支持一键复制\r\n- 会话列表显示项目目录标识；会话图标改主色显色\r\n\r\n覆盖安装即可升级，不会影响已有配置和激活状态。",
+  "pub_date": "2026-08-17T08:37:01.247Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWU9VL1BjcVcwc1FKRmZBWnA3RzNpS2Uya3BqeDljaDJ6Rm00YmdUUE1PWmFwdXdnSmdXQTlGbWtkVzhWMEdoMmUySjdXT3ppK1VHUFB3VndNR0JjVkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTQzNDM2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4xX3g2NC1zZXR1cC5leGUKeTB5dFlMNGgwTkZiL0duVnpHV3l3MEZsZzJpUTFidnp4Y2xZQVFTT2wzbHBjK0p2YWNyVHdZYjQwZE5yV2tLNHlBckd5R2ZrY2R3ck5tWXVZbTF1QlE9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.1/ABAP.Copilot_1.0.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUJENTdMcUR4a0tkVXZldHdnYzZTZi9kZVZQay9tanlxeFB4UXVIdGdOVURCVlNjZXRwdFM2bG94RGlSSEwvcGptTmdHZ1liL1NlcVFKaHdDR1B5TFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTU1ODA2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4yX3g2NC1zZXR1cC5leGUKTkZIZnc1M3Y0TG1jRjJ3MWw4dGU5QllCdXY4bnBYYm9abXB3c1JVeDl5VHl0Qy8yZGtZT1RuNUZ2dGcybk5QbURPVXlkQ2ljdUpBQWFsQkFvVnpXQXc9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.2/ABAP.Copilot_1.0.2_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWU9VL1BjcVcwc1FKRmZBWnA3RzNpS2Uya3BqeDljaDJ6Rm00YmdUUE1PWmFwdXdnSmdXQTlGbWtkVzhWMEdoMmUySjdXT3ppK1VHUFB3VndNR0JjVkFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTQzNDM2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4xX3g2NC1zZXR1cC5leGUKeTB5dFlMNGgwTkZiL0duVnpHV3l3MEZsZzJpUTFidnp4Y2xZQVFTT2wzbHBjK0p2YWNyVHdZYjQwZE5yV2tLNHlBckd5R2ZrY2R3ck5tWXVZbTF1QlE9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.1/ABAP.Copilot_1.0.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUJENTdMcUR4a0tkVXZldHdnYzZTZi9kZVZQay9tanlxeFB4UXVIdGdOVURCVlNjZXRwdFM2bG94RGlSSEwvcGptTmdHZ1liL1NlcVFKaHdDR1B5TFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTU1ODA2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4yX3g2NC1zZXR1cC5leGUKTkZIZnc1M3Y0TG1jRjJ3MWw4dGU5QllCdXY4bnBYYm9abXB3c1JVeDl5VHl0Qy8yZGtZT1RuNUZ2dGcybk5QbURPVXlkQ2ljdUpBQWFsQkFvVnpXQXc9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.2/ABAP.Copilot_1.0.2_x64-setup.exe"
     }
   }
 }
