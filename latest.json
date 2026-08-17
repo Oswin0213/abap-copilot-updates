@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "notes": "首个正式版本（Tauri v2 重构）。\r\n\r\n- AI 对话：OpenAI 兼容流式聊天，Agent 循环自动调用 SAP 工具（读写源码、查询数据、RFC/调试、测试分析，参数自动纠正、死循环检测）\r\n- 多系统并行：一条指令在多个 SAP 系统同时执行，分块展示进度、单系统失败隔离\r\n- 会话页签多开：多个会话并行生成互不影响；系统 / 模型 / 项目目录随页签独立绑定\r\n- 项目目录与本地文件：AI 可用 fs_list / fs_read / fs_write 读写项目目录（如分析完程序直接生成报告到本地）；@ 引用项目文件带入上下文\r\n- 斜杠指令：/ 复用常用提示词，/触发 内容 + Ctrl+Enter 免鼠标快捷保存\r\n- 会话管理：分组 / 收藏 / 拖拽 / 批量，右键导出 Markdown / HTML / Word / PDF\r\n- 审计日志：工具调用（含本地文件操作）全程落盘可查，筛选 / 统计 / CSV 导出\r\n- 语音输入：自定义触发键（Win+H 系统听写或 右Alt 等输入法热键）\r\n- 个性化：8 套明暗主题（左下角左键亮/暗快切、右键全选）、界面缩放\r\n- IP 套件：全局唤起热键、系统托盘、开机自启、14 天试用与激活码许可证、检查更新（GitHub + jsDelivr + Gitee 镜像）、使用技巧页\r\n\r\n覆盖安装即可升级，不会影响已有配置和激活状态。",
+  "pub_date": "2026-08-17T04:22:04.050Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWU0vQ2VHUW5GaFJPYU1aUWFhRjFiRHRKRTlVS0JROFlvQVZTMU43QnBPMEZ6MC91WU9Td0o2YWVHNEp3d2ZtVGQwajlQS3N3ZC80bGFGdE1zN2V1S2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTQwNDkzCWZpbGU6QUJBUCBDb3BpbG90XzEuMC4wX3g2NC1zZXR1cC5leGUKQjlsSnlaMUFuby9EUDcrdjlVS0ptbG44UUdnZ2RsTi8rZTQ1dEZHT3h4dmUweHp6eFgzT1p4ck5ZSnpOQ3h3bzZJRWx0SlR1c293YlBsZkNkMnVxQUE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.0/ABAP.Copilot_1.0.0_x64-setup.exe"
+    },
+    "windows-x86_64-nsis": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWU0vQ2VHUW5GaFJPYU1aUWFhRjFiRHRKRTlVS0JROFlvQVZTMU43QnBPMEZ6MC91WU9Td0o2YWVHNEp3d2ZtVGQwajlQS3N3ZC80bGFGdE1zN2V1S2dVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2OTQwNDkzCWZpbGU6QUJBUCBDb3BpbG90XzEuMC4wX3g2NC1zZXR1cC5leGUKQjlsSnlaMUFuby9EUDcrdjlVS0ptbG44UUdnZ2RsTi8rZTQ1dEZHT3h4dmUweHp6eFgzT1p4ck5ZSnpOQ3h3bzZJRWx0SlR1c293YlBsZkNkMnVxQUE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.0/ABAP.Copilot_1.0.0_x64-setup.exe"
+    }
+  }
+}
