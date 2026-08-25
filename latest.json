@@ -1,15 +1,15 @@
 {
-  "version": "1.0.3",
-  "notes": "v1.0.3 交互优化与 SAP 写入可靠性修复。\r\n\r\n修复：\r\n- SAP 写程序常报「锁句柄失效」（HTTP 423）：根因是包白名单校验在加锁后发无状态请求，打断了 ADT 有状态会话；已在 vsp 侧修复（创建对象后预热包缓存 + 校验请求改有状态），并在应用侧加了自动重试兜底\r\n- 源码写入被网关 WAF 拦截（HTTP 403）时，不再把整页拦截 HTML 塞进上下文，改为识别后给出「去网关放行 /sap/bc/adt/」的明确提示，AI 不再反复无效重试\r\n- 从 DeepSeek 切到 Kimi 等切换模型档案时，模型名不再停留在上一个档案的值\r\n- 在某个分组下新建会话时，不会再把「未分类」分组一起展开\r\n- 软件启动不再默认窗口置顶\r\n\r\n新增：\r\n- 运行中干预：生成过程中直接回车即可插入新指令，在当前这一轮结束后生效，已有的思考与工具结果全部保留，不必停止重来\r\n- 会话分组支持拖拽排序\r\n- 消息区新增回到顶部 / 底部悬浮按钮，并支持 Ctrl+Home / Ctrl+End\r\n- 标签页右键新增「会话列表定位」：自动展开所属分组并滚动高亮\r\n- 权限管控新增「传输请求操作」开关（默认关，开启需二次确认）：关闭时仅能改 $TMP 等本地包对象，开启后可操作传输请求并修改可传输对象\r\n- 新增能力清单文档 docs/CAPABILITIES.md：12 类 SAP 操作能力及对应的推荐提示词\r\n\r\n优化：\r\n- 首页示例卡片点击后内容直接带入输入框，不再只是改会话标题\r\n- 消息内选中片段后右键，复制 / 引用只作用于选中内容，不再整条消息\r\n- 输入框回车语义：展开长文态 Enter 换行、Ctrl+Enter 发送；收起态 Enter 发送、Shift+Enter 换行（保存指令快捷键改为 Ctrl+S）\r\n- 设置界面精简：系统卡片非编辑态不再显示服务器地址；系统名 / 客户端 / 密码并排一行；AI 配置的名称与模型名并排一行\r\n\r\n升级安装不会影响已有配置和激活状态。",
-  "pub_date": "2026-08-21T09:36:00.307Z",
+  "version": "1.0.4",
+  "notes": "新增：指令库支持 Ctrl+K（可在设置里改）全局快捷面板，模糊搜索 + 全部/我的指令/系统指令三页签，按最近使用时间排序并记录使用次数；搜索无匹配时可直接新增一条\r\n新增：聊天消息支持右键「提取指令」，弹窗预填内容且可编辑，保存为自己的指令\r\n新增：指令库页面重新整理为左右布局（我的指令 / 系统指令），系统指令按场景分区，支持批量/单个展开折叠\r\n新增：接入 Claude 原生 Messages API，支持 prompt caching 降低重复对话成本\r\n新增：主界面加入激活状态入口，可点击进入购买/许可证详情\r\n优化：授权体系改造，取消试用期，未激活时功能不可用但界面可见\r\n优化：会话列表支持全文搜索（含消息正文，不再只搜标题）\r\n优化：模型调用失败时自动降级到备用模型重试一次\r\n优化：项目目录选择器支持收藏与移除\r\n优化：次要页面与弹窗改为按需加载，安装包体积更小\r\n优化：全部页签下拉列表加宽，悬浮可看到完整会话标题\r\n修复：切换会话模型名有时无法切回默认模型\r\n修复：发送消息后未自动滚动到最新消息\r\n修复：/ 指令菜单键盘下移超出可视区域时看不到当前选中项\r\n修复：消息提示（Toast）位置与宽度显示不合理\r\n\r\n升级安装不会影响已有配置和激活状态。",
+  "pub_date": "2026-08-25T03:07:05.535Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUNhZ1Z1WFJFSW9jeXBLNzBCcmpGcTl2SXNRSGg4dmZ6L1UyL2xmVTN2clMwNm1PcFVPcFBWYm1GaWVYSm42SENEOTRRRkRwZmx1dkszWmZ4VFpqZVFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MzA0OTQ3CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4zX3g2NC1zZXR1cC5leGUKTVdkaE55TFc3Z1FxSlVHWFdiTHBMVUN2cXBpL2l1d0FzenZENkF2cGNsRlp4UmVZRkF6djBoL1JHWHZ1RnRDd0g2TWVzejcza0Y1RUlXUStIN252RHc9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.3/ABAP.Copilot_1.0.3_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUFkdlowM0NiUGVJYWVoc04vMERyODVGUEVzQjBtZDFjUWc5ZWdlVWVFSDBQajNZOUcwMFdEVGZRbGVHWGNkN1B6eXpJMWJuYjJhMlU0VDNIUVIxTEFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjI3MjIxCWZpbGU6QUJBUCBDb3BpbG90XzEuMC40X3g2NC1zZXR1cC5leGUKQ3NFZUtaWlVtSnRaM0dyYmRwRUszTlhNQTlIeHNVZk9lUVBIeDBYZEVIZnc1Q0FoUDlJREFFTkZxTkhrQWQzQ0lrY0xxeHJTTmRlV29mb1ByNFB0Q3c9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.4/ABAP.Copilot_1.0.4_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUNhZ1Z1WFJFSW9jeXBLNzBCcmpGcTl2SXNRSGg4dmZ6L1UyL2xmVTN2clMwNm1PcFVPcFBWYm1GaWVYSm42SENEOTRRRkRwZmx1dkszWmZ4VFpqZVFRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3MzA0OTQ3CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4zX3g2NC1zZXR1cC5leGUKTVdkaE55TFc3Z1FxSlVHWFdiTHBMVUN2cXBpL2l1d0FzenZENkF2cGNsRlp4UmVZRkF6djBoL1JHWHZ1RnRDd0g2TWVzejcza0Y1RUlXUStIN252RHc9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.3/ABAP.Copilot_1.0.3_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUFkdlowM0NiUGVJYWVoc04vMERyODVGUEVzQjBtZDFjUWc5ZWdlVWVFSDBQajNZOUcwMFdEVGZRbGVHWGNkN1B6eXpJMWJuYjJhMlU0VDNIUVIxTEFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg3NjI3MjIxCWZpbGU6QUJBUCBDb3BpbG90XzEuMC40X3g2NC1zZXR1cC5leGUKQ3NFZUtaWlVtSnRaM0dyYmRwRUszTlhNQTlIeHNVZk9lUVBIeDBYZEVIZnc1Q0FoUDlJREFFTkZxTkhrQWQzQ0lrY0xxeHJTTmRlV29mb1ByNFB0Q3c9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.4/ABAP.Copilot_1.0.4_x64-setup.exe"
     }
   }
 }
