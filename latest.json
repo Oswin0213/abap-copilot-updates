@@ -1,15 +1,15 @@
 {
-  "version": "1.0.5",
-  "notes": "新增：\r\n- 生成 Excel 报表、Word 文档：AI 现在能基于 SAP 数据直接生成带品牌配色表头、斑马纹、合计行的 Excel 表格，以及带标题层级、真实列表、表格底纹、页脚页码的 Word 报告\r\n- 支持读取本地 Excel/Word/PowerPoint 文件内容\r\n\r\n优化：\r\n- AI 工具调用记录改为可折叠分组，减少长对话里的界面占用，生成结束自动收起\r\n- @ 引用文件面板键盘导航修复（下移到列表底部时高亮不再\"消失\"）\r\n\r\n修复：\r\n- 修复极端情况下后台任务异常可能导致界面卡在\"生成中\"、无法发送消息的问题\r\n- 修复 Excel 报表中文列被截断、数字列显示 ### 的问题\r\n- 修复 Word 文档项目符号列表不显示、多个独立列表编号互相接续等显示异常\r\n\r\n升级安装不会影响已有配置和激活状态。",
-  "pub_date": "2026-08-30T08:26:24.885Z",
+  "version": "1.0.6",
+  "notes": "优化：\r\n- 系统设置里\"服务器地址\"字段的提示改为直接引导找 Basis 用事务码 SMICM 或 /n/ui2/flp 查实际地址，避免照抄 SAP GUI 登录属性里不可用的地址导致连接失败\r\n\r\n升级安装不会影响已有配置和激活状态。",
+  "pub_date": "2026-08-30T11:36:47.320Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUQzaGVURmhXbkEzVUhEc0ZBRzVsV2J3a3FObzJlbjl3cGlKVTBOQkR4OWFTdXMxUkRmV3EvbVZnVUExVFcwYlhBL2JIZFo5a3FTWGVjZlMwUHFtNUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDc4MzgwCWZpbGU6QUJBUCBDb3BpbG90XzEuMC41X3g2NC1zZXR1cC5leGUKSXROTDlqVFN2MTlkdk5WWElYZWMwRFRJS1l3dStYT3pUZmdPdm5PeHJUbkhWUjRzR1pjOGVKOCtiN2g3dWdzZTVkSGF1UUNybXJGbWhpV3ZBSXRTQ2c9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.5/ABAP.Copilot_1.0.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUIxdWs0NkJnbjZidzJQRHlxWVJMU1dPbzQyODVFVzBVWWhMUm5UdDdUaUJndFBwRGZqcGdnWEtOV3VoczdYaEJmL3dXL0RTRjVHTTNCU3RFMWRVT1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDg5ODAyCWZpbGU6QUJBUCBDb3BpbG90XzEuMC42X3g2NC1zZXR1cC5leGUKaFR2a2k1S3ZTWmk3dzFnLzJxNGpTWkhRZVpOTVpsbzhnVzBhNklUbUd0WVBUTW54L2lYUHlmUnlMdUh1OEVNOVAvVklhVWRDOXl4MDJISkdKREZzQVE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.6/ABAP.Copilot_1.0.6_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUQzaGVURmhXbkEzVUhEc0ZBRzVsV2J3a3FObzJlbjl3cGlKVTBOQkR4OWFTdXMxUkRmV3EvbVZnVUExVFcwYlhBL2JIZFo5a3FTWGVjZlMwUHFtNUFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDc4MzgwCWZpbGU6QUJBUCBDb3BpbG90XzEuMC41X3g2NC1zZXR1cC5leGUKSXROTDlqVFN2MTlkdk5WWElYZWMwRFRJS1l3dStYT3pUZmdPdm5PeHJUbkhWUjRzR1pjOGVKOCtiN2g3dWdzZTVkSGF1UUNybXJGbWhpV3ZBSXRTQ2c9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.5/ABAP.Copilot_1.0.5_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUIxdWs0NkJnbjZidzJQRHlxWVJMU1dPbzQyODVFVzBVWWhMUm5UdDdUaUJndFBwRGZqcGdnWEtOV3VoczdYaEJmL3dXL0RTRjVHTTNCU3RFMWRVT1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MDg5ODAyCWZpbGU6QUJBUCBDb3BpbG90XzEuMC42X3g2NC1zZXR1cC5leGUKaFR2a2k1S3ZTWmk3dzFnLzJxNGpTWkhRZVpOTVpsbzhnVzBhNklUbUd0WVBUTW54L2lYUHlmUnlMdUh1OEVNOVAvVklhVWRDOXl4MDJISkdKREZzQVE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.6/ABAP.Copilot_1.0.6_x64-setup.exe"
     }
   }
 }
