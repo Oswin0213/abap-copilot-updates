@@ -1,15 +1,15 @@
 {
-  "version": "1.0.7",
-  "notes": "新增：\r\n- 数据安全面板（设置 → 数据安全）：可为 SAP 密码与 LLM API Key 开启主密码加密保存，配置文件被拷走也解不开；支持「本机免密」，启动自动解锁，不用每次输密码。默认不开启，不开仍是明文保存\r\n- 未激活时可先用纯对话模式（不选 SAP 系统）问 ABAP 问题，连接 SAP 系统仍需激活\r\n- 选中 SAP 系统即后台预连接，第一条消息不再等待；系统选择器圆点改为 未连接 / 连接中 / 已连接 / 失败 四态，失败原因鼠标悬停可见\r\n\r\n优化：\r\n- 大幅减少 AI 调用 SAP 工具失败后的反复重试：同样参数的失败不再重复请求 SAP，失败时自动附上该动作的用法文档，读函数模块少给函数组时自动定位并读取\r\n- 长对话不再突然报错：请求前自动裁剪过长的历史（优先省略较早的工具结果），不再等接口返回超限错误\r\n- 补充了看 dump、看 trace、按方法读大类等常用操作的提示词范例\r\n\r\n修复：\r\n- 退出程序时确保后台 vsp 进程被终止，不再可能残留孤儿进程\r\n\r\n升级安装不会影响已有配置和激活状态。",
-  "pub_date": "2026-09-02T01:49:50.364Z",
+  "version": "1.0.8",
+  "notes": "### 新增\r\n\r\n- **Word 文档支持参照模板生成**：给一份 .docx 模板（如公司的 FS/技术文档标准格式），产出直接继承模板的字体、配色、标题样式、页眉页脚与页面设置，只替换正文。用法：先让 AI 读模板看章节结构，再说「参照 xxx.docx 生成」\r\n- **读 Word 文档改为结构化还原**：标题层级、列表、表格都能还原成 Markdown 骨架，表格不再被拍平成一串文字\r\n- 模型设置新增「百炼」快速添加预设（阿里百炼兼容接口，默认 qwen-max）\r\n- 模型档案可单独配置上下文上限（token），32k 与 200k 的模型不再共用同一个默认值\r\n- 基础设置新增「允许 AI 写本地文件」开关（默认开启），关闭后 AI 只能读项目目录\r\n- 「切换模型名」支持搜索过滤，同系列模型优先展示——模型广场类接口一次返回上百个模型时不再难以挑选\r\n\r\n### 优化\r\n\r\n- **粘贴的图片改为独立文件存储**，会话数据不再内联 base64：启动和保存明显变快，旧数据首次启动自动迁移，删除会话时连带清理图片\r\n- **追问时能看到之前粘贴的图片**：此前图片只在粘贴那一轮有效，对着截图追问「第二行是什么」模型已经看不见\r\n- **长会话流式回复大幅提速**：回复过程中不再逐字重新渲染全部历史消息\r\n- 审计日志新增单条大小与总体积上限，翻页、改筛选条件不再重复解析整个文件\r\n- SAP 权限配置缺字段时一律按最小权限处理（只读 / 禁写 / 禁自由 SQL / 禁传输请求）\r\n- 工具调用缺参数时自动附上该动作的参数文档，减少反复试错空转\r\n- 增强组件已部署的系统不再显示空的部署日志与重复的部署后提示\r\n- 数据文件写入增加刷盘，避免异常断电留下空文件\r\n\r\n### 修复\r\n\r\n- 快速添加连点不同预设时，下方表单的预填值不刷新\r\n- Claude 原生接口档案「切换模型名」拉取失败（未传接口协议）\r\n- 「切换模型名」列表会残留上一个模型档案的内容\r\n- 生成的 Word 文档中无序列表显示为数字编号而非圆点\r\n- 对带图片的消息点「重新生成」时图片丢失\r\n\r\n升级安装不会影响已有配置和激活状态。",
+  "pub_date": "2026-09-03T04:02:45.021Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUgxeXRLTXd5cGhQSmpaL2ZtQjhOSlhnTThJbFZxNnFjbDZKSm93RFBjUVJna2lFNmhuS0ZWUVluTUg5M2NLclJoUWRkTTJmcUMwTW1odWVyVGJKSXdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MzEzNzg0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC43X3g2NC1zZXR1cC5leGUKb25EOTBpd1FmMC96UHhPUkdnVDJ2VXE2b0RDbVc3ZmZRbEdJelF1Y2s3cllOVkMzQjNpMDh2VyswYXFNL205QkdiUU5OQzJQRTNoc2pUa2xOWlhLQ0E9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.7/ABAP.Copilot_1.0.7_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWURwTC9aa21GWklkd0xGTzFNZ25Bem1sdWFBSTJpcFQzaEl6dTh1dDVzWVVoUW1VMGx1cnF2bXJKR0JtVVljZTNWSmZnc2h2clhKd3FMTDFySGF4Z3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDA4MTU0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC44X3g2NC1zZXR1cC5leGUKdjk4VEVmR3B4ZGx2MC90ZHRaeXFHdGlubEk2SE9jdTIySURFZ1RKQi9TVDFwQlNWVFlZU0d4YnhxenZnN1ZESUtsUjYxWW5BWG5ZQTRzSkVsR09mQ2c9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.8/ABAP.Copilot_1.0.8_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUgxeXRLTXd5cGhQSmpaL2ZtQjhOSlhnTThJbFZxNnFjbDZKSm93RFBjUVJna2lFNmhuS0ZWUVluTUg5M2NLclJoUWRkTTJmcUMwTW1odWVyVGJKSXdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MzEzNzg0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC43X3g2NC1zZXR1cC5leGUKb25EOTBpd1FmMC96UHhPUkdnVDJ2VXE2b0RDbVc3ZmZRbEdJelF1Y2s3cllOVkMzQjNpMDh2VyswYXFNL205QkdiUU5OQzJQRTNoc2pUa2xOWlhLQ0E9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.7/ABAP.Copilot_1.0.7_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWURwTC9aa21GWklkd0xGTzFNZ25Bem1sdWFBSTJpcFQzaEl6dTh1dDVzWVVoUW1VMGx1cnF2bXJKR0JtVVljZTNWSmZnc2h2clhKd3FMTDFySGF4Z3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDA4MTU0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC44X3g2NC1zZXR1cC5leGUKdjk4VEVmR3B4ZGx2MC90ZHRaeXFHdGlubEk2SE9jdTIySURFZ1RKQi9TVDFwQlNWVFlZU0d4YnhxenZnN1ZESUtsUjYxWW5BWG5ZQTRzSkVsR09mQ2c9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.8/ABAP.Copilot_1.0.8_x64-setup.exe"
     }
   }
 }
