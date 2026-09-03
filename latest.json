@@ -1,15 +1,15 @@
 {
-  "version": "1.0.8",
-  "notes": "### 新增\r\n\r\n- **Word 文档支持参照模板生成**：给一份 .docx 模板（如公司的 FS/技术文档标准格式），产出直接继承模板的字体、配色、标题样式、页眉页脚与页面设置，只替换正文。用法：先让 AI 读模板看章节结构，再说「参照 xxx.docx 生成」\r\n- **读 Word 文档改为结构化还原**：标题层级、列表、表格都能还原成 Markdown 骨架，表格不再被拍平成一串文字\r\n- 模型设置新增「百炼」快速添加预设（阿里百炼兼容接口，默认 qwen-max）\r\n- 模型档案可单独配置上下文上限（token），32k 与 200k 的模型不再共用同一个默认值\r\n- 基础设置新增「允许 AI 写本地文件」开关（默认开启），关闭后 AI 只能读项目目录\r\n- 「切换模型名」支持搜索过滤，同系列模型优先展示——模型广场类接口一次返回上百个模型时不再难以挑选\r\n\r\n### 优化\r\n\r\n- **粘贴的图片改为独立文件存储**，会话数据不再内联 base64：启动和保存明显变快，旧数据首次启动自动迁移，删除会话时连带清理图片\r\n- **追问时能看到之前粘贴的图片**：此前图片只在粘贴那一轮有效，对着截图追问「第二行是什么」模型已经看不见\r\n- **长会话流式回复大幅提速**：回复过程中不再逐字重新渲染全部历史消息\r\n- 审计日志新增单条大小与总体积上限，翻页、改筛选条件不再重复解析整个文件\r\n- SAP 权限配置缺字段时一律按最小权限处理（只读 / 禁写 / 禁自由 SQL / 禁传输请求）\r\n- 工具调用缺参数时自动附上该动作的参数文档，减少反复试错空转\r\n- 增强组件已部署的系统不再显示空的部署日志与重复的部署后提示\r\n- 数据文件写入增加刷盘，避免异常断电留下空文件\r\n\r\n### 修复\r\n\r\n- 快速添加连点不同预设时，下方表单的预填值不刷新\r\n- Claude 原生接口档案「切换模型名」拉取失败（未传接口协议）\r\n- 「切换模型名」列表会残留上一个模型档案的内容\r\n- 生成的 Word 文档中无序列表显示为数字编号而非圆点\r\n- 对带图片的消息点「重新生成」时图片丢失\r\n\r\n升级安装不会影响已有配置和激活状态。",
-  "pub_date": "2026-09-03T04:02:45.021Z",
+  "version": "1.0.9",
+  "notes": "### 修复\r\n\r\n- **界面崩溃不再白屏**：此前渲染一旦出错整个界面会变成一片空白，而软件禁用了 F5，用户只能杀进程重开。现在会显示错误详情，并提供「复制错误信息」与「重新加载」按钮，会话和设置都不受影响\r\n- **国内检查更新下载失败**：更新源改为 Gitee 优先，并按固定优先级依次尝试。此前谁响应快用谁，国内常拿到 GitHub 的下载地址导致「检查到新版本但下不动」\r\n- **下载失败自动换镜像重试**：一个源下不动时自动改用其它源，界面会提示当前正在从哪个源下载\r\n- **错误提示区分「检查失败」与「下载失败」**：此前下载失败也显示成检查失败，且会把一长串下载链接直接甩给用户；现在文案对应实际环节，下载失败时还提供「打开发布页手动下载」入口\r\n\r\n升级安装不会影响已有配置和激活状态。\r\n\r\n---\r\n\r\n若你使用的是 1.0.7 及更早版本、自动更新一直失败，请到 https://gitee.com/tianxing111/abap-copilot-updates/releases 手动下载安装包覆盖安装，之后的自动更新即可正常工作。",
+  "pub_date": "2026-09-03T07:00:59.804Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWURwTC9aa21GWklkd0xGTzFNZ25Bem1sdWFBSTJpcFQzaEl6dTh1dDVzWVVoUW1VMGx1cnF2bXJKR0JtVVljZTNWSmZnc2h2clhKd3FMTDFySGF4Z3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDA4MTU0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC44X3g2NC1zZXR1cC5leGUKdjk4VEVmR3B4ZGx2MC90ZHRaeXFHdGlubEk2SE9jdTIySURFZ1RKQi9TVDFwQlNWVFlZU0d4YnhxenZnN1ZESUtsUjYxWW5BWG5ZQTRzSkVsR09mQ2c9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.8/ABAP.Copilot_1.0.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUM4b013d1YwZ001UFgyQ1g3dzF5SWRVelpXM0NlOThzclY3NFN4a3lEdlRiWVRvVkJLVWNVcVpRVEVEQmlVcldjakRzUmxJMThjNkM0YXBiai8zTlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDE4ODU2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC45X3g2NC1zZXR1cC5leGUKeHREek41a3Zya0JGMVo2K0RYQ0ZaK0pmZXVPVFR2citkOFgrVzJacUI2NlB6UHVzUGIxdEJHc2NiWUZzcGw3bXRsQUlyU0FHeUxPQXoxbUdnZDdtREE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.9/ABAP.Copilot_1.0.9_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWURwTC9aa21GWklkd0xGTzFNZ25Bem1sdWFBSTJpcFQzaEl6dTh1dDVzWVVoUW1VMGx1cnF2bXJKR0JtVVljZTNWSmZnc2h2clhKd3FMTDFySGF4Z3c0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDA4MTU0CWZpbGU6QUJBUCBDb3BpbG90XzEuMC44X3g2NC1zZXR1cC5leGUKdjk4VEVmR3B4ZGx2MC90ZHRaeXFHdGlubEk2SE9jdTIySURFZ1RKQi9TVDFwQlNWVFlZU0d4YnhxenZnN1ZESUtsUjYxWW5BWG5ZQTRzSkVsR09mQ2c9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.8/ABAP.Copilot_1.0.8_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUM4b013d1YwZ001UFgyQ1g3dzF5SWRVelpXM0NlOThzclY3NFN4a3lEdlRiWVRvVkJLVWNVcVpRVEVEQmlVcldjakRzUmxJMThjNkM0YXBiai8zTlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDE4ODU2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC45X3g2NC1zZXR1cC5leGUKeHREek41a3Zya0JGMVo2K0RYQ0ZaK0pmZXVPVFR2citkOFgrVzJacUI2NlB6UHVzUGIxdEJHc2NiWUZzcGw3bXRsQUlyU0FHeUxPQXoxbUdnZDdtREE9PQo=",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.9/ABAP.Copilot_1.0.9_x64-setup.exe"
     }
   }
 }
