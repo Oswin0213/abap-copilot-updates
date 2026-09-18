@@ -1,0 +1,115 @@
+{
+  "updatedAt": "2026-05",
+  "note": "单价为官网公开定价（每百万 token，输入按缓存未命中、分档定价取最低档）；hosts 为空的条目只提供上下文/多模态，不提供价格。",
+  "providers": [
+    {
+      "name": "DeepSeek",
+      "hosts": ["api.deepseek.com"],
+      "currency": "CNY",
+      "models": [
+        { "model": "deepseek-chat", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 3 },
+        { "model": "deepseek-reasoner", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 3 }
+      ]
+    },
+    {
+      "name": "Moonshot Kimi",
+      "hosts": ["api.moonshot.cn", "api.moonshot.ai"],
+      "currency": "CNY",
+      "models": [
+        { "model": "kimi-k2.5", "vision": true, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
+        { "model": "kimi-k2-thinking-turbo", "vision": false, "contextTokens": 256000, "priceIn": 8, "priceOut": 58 },
+        { "model": "kimi-k2-thinking", "vision": false, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
+        { "model": "kimi-k2-turbo-preview", "vision": false, "contextTokens": 256000, "priceIn": 8, "priceOut": 58 },
+        { "model": "kimi-k2-0905-preview", "vision": false, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
+        { "model": "kimi-k2-0711-preview", "vision": false, "contextTokens": 128000, "priceIn": 4, "priceOut": 16 },
+        { "model": "kimi-latest", "vision": true, "contextTokens": 128000, "priceIn": 10, "priceOut": 30 },
+        { "model": "moonshot-v1-8k", "vision": false, "contextTokens": 8000, "priceIn": 2, "priceOut": 10 },
+        { "model": "moonshot-v1-32k", "vision": false, "contextTokens": 32000, "priceIn": 5, "priceOut": 20 },
+        { "model": "moonshot-v1-128k", "vision": false, "contextTokens": 128000, "priceIn": 10, "priceOut": 30 }
+      ]
+    },
+    {
+      "name": "智谱 GLM",
+      "hosts": ["open.bigmodel.cn", "api.z.ai"],
+      "currency": "CNY",
+      "models": [
+        { "model": "glm-4.7-flash", "vision": false, "contextTokens": 200000, "priceIn": 0, "priceOut": 0 },
+        { "model": "glm-4.7", "vision": false, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 },
+        { "model": "glm-4.6v", "vision": true, "contextTokens": 128000, "priceIn": 2, "priceOut": 6 },
+        { "model": "glm-4.6", "vision": false, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 },
+        { "model": "glm-4.5v", "vision": true, "contextTokens": 64000, "priceIn": 2, "priceOut": 6 },
+        { "model": "glm-4.5-air", "vision": false, "contextTokens": 128000, "priceIn": 0.8, "priceOut": 2 },
+        { "model": "glm-4.5-flash", "vision": false, "contextTokens": 128000, "priceIn": 0, "priceOut": 0 },
+        { "model": "glm-4.5", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 8 },
+        { "model": "glm-4-plus", "vision": false, "contextTokens": 128000, "priceIn": 5, "priceOut": 5 },
+        { "model": "glm-4-flash", "vision": false, "contextTokens": 128000, "priceIn": 0, "priceOut": 0 }
+      ]
+    },
+    {
+      "name": "阿里云百炼",
+      "hosts": ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com"],
+      "currency": "CNY",
+      "models": [
+        { "model": "qwen3-max", "vision": false, "contextTokens": 256000, "priceIn": 6, "priceOut": 24 },
+        { "model": "qwen3-vl-plus", "vision": true, "contextTokens": 256000, "priceIn": 1, "priceOut": 10 },
+        { "model": "qwen3-coder-plus", "vision": false, "contextTokens": 1000000, "priceIn": 4, "priceOut": 16 },
+        { "model": "qwen-max", "vision": false, "contextTokens": 32000, "priceIn": 2.4, "priceOut": 9.6 },
+        { "model": "qwen-plus", "vision": false, "contextTokens": 128000, "priceIn": 0.8, "priceOut": 2 },
+        { "model": "qwen-turbo", "vision": false, "contextTokens": 1000000, "priceIn": 0.3, "priceOut": 0.6 },
+        { "model": "qwen-flash", "vision": false, "contextTokens": 1000000, "priceIn": 0.15, "priceOut": 1.5 },
+        { "model": "qwen-vl-max", "vision": true, "contextTokens": 128000, "priceIn": 3, "priceOut": 9 },
+        { "model": "qwen-vl-plus", "vision": true, "contextTokens": 128000, "priceIn": 1.5, "priceOut": 4.5 },
+        { "model": "deepseek-v3", "vision": false, "contextTokens": 64000, "priceIn": 2, "priceOut": 8 },
+        { "model": "deepseek-r1", "vision": false, "contextTokens": 64000, "priceIn": 4, "priceOut": 16 }
+      ]
+    },
+    {
+      "name": "OpenAI",
+      "hosts": ["api.openai.com"],
+      "currency": "USD",
+      "models": [
+        { "model": "gpt-5.2", "vision": true, "contextTokens": 400000, "priceIn": 1.75, "priceOut": 14 },
+        { "model": "gpt-5.1", "vision": true, "contextTokens": 400000, "priceIn": 1.25, "priceOut": 10 },
+        { "model": "gpt-5-mini", "vision": true, "contextTokens": 400000, "priceIn": 0.25, "priceOut": 2 },
+        { "model": "gpt-5-nano", "vision": true, "contextTokens": 400000, "priceIn": 0.05, "priceOut": 0.4 },
+        { "model": "gpt-5", "vision": true, "contextTokens": 400000, "priceIn": 1.25, "priceOut": 10 },
+        { "model": "gpt-4.1-mini", "vision": true, "contextTokens": 1000000, "priceIn": 0.4, "priceOut": 1.6 },
+        { "model": "gpt-4.1-nano", "vision": true, "contextTokens": 1000000, "priceIn": 0.1, "priceOut": 0.4 },
+        { "model": "gpt-4.1", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 8 },
+        { "model": "gpt-4o-mini", "vision": true, "contextTokens": 128000, "priceIn": 0.15, "priceOut": 0.6 },
+        { "model": "gpt-4o", "vision": true, "contextTokens": 128000, "priceIn": 2.5, "priceOut": 10 },
+        { "model": "o4-mini", "vision": true, "contextTokens": 200000, "priceIn": 1.1, "priceOut": 4.4 },
+        { "model": "o3", "vision": true, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 }
+      ]
+    },
+    {
+      "name": "Anthropic",
+      "hosts": ["api.anthropic.com"],
+      "currency": "USD",
+      "models": [
+        { "model": "claude-opus-4-1", "vision": true, "contextTokens": 200000, "priceIn": 15, "priceOut": 75 },
+        { "model": "claude-opus-4-5", "vision": true, "contextTokens": 200000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-opus-4-6", "vision": true, "contextTokens": 200000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-sonnet-4-5", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
+        { "model": "claude-sonnet-4-6", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
+        { "model": "claude-sonnet-4", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
+        { "model": "claude-haiku-4-5", "vision": true, "contextTokens": 200000, "priceIn": 1, "priceOut": 5 }
+      ]
+    },
+    {
+      "name": "通用（仅上下文/多模态，任意地址）",
+      "hosts": [],
+      "currency": "CNY",
+      "models": [
+        { "model": "claude-", "vision": true, "contextTokens": 200000 },
+        { "model": "gpt-5", "vision": true, "contextTokens": 400000 },
+        { "model": "gpt-4.1", "vision": true, "contextTokens": 1000000 },
+        { "model": "gpt-4o", "vision": true, "contextTokens": 128000 },
+        { "model": "deepseek-", "vision": false, "contextTokens": 128000 },
+        { "model": "kimi-k2", "vision": false, "contextTokens": 256000 },
+        { "model": "glm-4", "vision": false, "contextTokens": 128000 },
+        { "model": "qwen", "vision": false, "contextTokens": 128000 }
+      ]
+    }
+  ]
+}
