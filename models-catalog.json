@@ -1,66 +1,79 @@
 {
-  "updatedAt": "2026-05",
-  "note": "单价为官网公开定价（每百万 token，输入按缓存未命中、分档定价取最低档）；hosts 为空的条目只提供上下文/多模态，不提供价格。",
+  "updatedAt": "2026-11-10",
+  "note": "新增与更新条目于 2026-11-10 核对官方文档，来源见 MODEL_PRESETS.md；历史条目保留。价格单位为每百万 token，输入按缓存未命中、分档取最低档，DeepSeek 按高峰时段。只对核对过价格的主机预填单价，其他地址仅填上下文/多模态；实际费用以服务商账单为准。",
   "providers": [
     {
       "name": "DeepSeek",
       "hosts": ["api.deepseek.com"],
       "currency": "CNY",
       "models": [
-        { "model": "deepseek-chat", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 3 },
-        { "model": "deepseek-reasoner", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 3 }
+        { "model": "deepseek-flash", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 8 },
+        { "model": "deepseek-v4-flash", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 8 },
+        { "model": "deepseek-v4-pro", "vision": false, "contextTokens": 1000000, "priceIn": 9, "priceOut": 27 }
       ]
     },
     {
       "name": "Moonshot Kimi",
-      "hosts": ["api.moonshot.cn", "api.moonshot.ai"],
+      "hosts": ["api.moonshot.cn"],
       "currency": "CNY",
       "models": [
-        { "model": "kimi-k2.5", "vision": true, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
-        { "model": "kimi-k2-thinking-turbo", "vision": false, "contextTokens": 256000, "priceIn": 8, "priceOut": 58 },
-        { "model": "kimi-k2-thinking", "vision": false, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
-        { "model": "kimi-k2-turbo-preview", "vision": false, "contextTokens": 256000, "priceIn": 8, "priceOut": 58 },
-        { "model": "kimi-k2-0905-preview", "vision": false, "contextTokens": 256000, "priceIn": 4, "priceOut": 16 },
-        { "model": "kimi-k2-0711-preview", "vision": false, "contextTokens": 128000, "priceIn": 4, "priceOut": 16 },
-        { "model": "kimi-latest", "vision": true, "contextTokens": 128000, "priceIn": 10, "priceOut": 30 },
-        { "model": "moonshot-v1-8k", "vision": false, "contextTokens": 8000, "priceIn": 2, "priceOut": 10 },
-        { "model": "moonshot-v1-32k", "vision": false, "contextTokens": 32000, "priceIn": 5, "priceOut": 20 },
-        { "model": "moonshot-v1-128k", "vision": false, "contextTokens": 128000, "priceIn": 10, "priceOut": 30 }
+        { "model": "kimi-k3.1-pro-highspeed", "vision": true, "contextTokens": 1048576, "priceIn": 26, "priceOut": 136 },
+        { "model": "kimi-k3.1-pro", "vision": true, "contextTokens": 1048576, "priceIn": 13, "priceOut": 68 },
+        { "model": "kimi-k3", "vision": true, "contextTokens": 1048576, "priceIn": 20, "priceOut": 100 },
+        { "model": "kimi-k2.7-code-highspeed", "vision": false, "contextTokens": 262144, "priceIn": 13, "priceOut": 54 },
+        { "model": "kimi-k2.7-code", "vision": false, "contextTokens": 262144, "priceIn": 6.5, "priceOut": 27 },
+        { "model": "kimi-k2.6", "vision": true, "contextTokens": 262144, "priceIn": 6.5, "priceOut": 27 }
+      ]
+    },
+    {
+      "name": "Kimi Code（会员订阅）",
+      "hosts": ["api.kimi.com", "api.kimi.ai"],
+      "currency": "CNY",
+      "models": [
+        { "model": "kimi-for-coding-highspeed", "vision": true, "contextTokens": 262144 },
+        { "model": "kimi-for-coding", "vision": true, "contextTokens": 1048576 },
+        { "model": "k3.1-pro-highspeed", "vision": true, "contextTokens": 1048576 },
+        { "model": "k3.1-pro", "vision": true, "contextTokens": 1048576 },
+        { "model": "k3-256k", "vision": true, "contextTokens": 262144 },
+        { "model": "k3", "vision": true, "contextTokens": 262144 }
       ]
     },
     {
       "name": "智谱 GLM",
-      "hosts": ["open.bigmodel.cn", "api.z.ai"],
+      "hosts": ["open.bigmodel.cn"],
       "currency": "CNY",
       "models": [
+        { "model": "glm-5.3-flashx", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 7 },
+        { "model": "glm-5.3-flash", "vision": true, "contextTokens": 1000000, "priceIn": 0.8, "priceOut": 2.8 },
+        { "model": "glm-5.3", "vision": false, "contextTokens": 1000000, "priceIn": 8, "priceOut": 28 },
+        { "model": "glm-5.2", "vision": false, "contextTokens": 1000000, "priceIn": 8, "priceOut": 28 },
+        { "model": "glm-5.1", "vision": false, "contextTokens": 200000, "priceIn": 6, "priceOut": 24 },
+        { "model": "glm-5-turbo", "vision": false, "contextTokens": 200000, "priceIn": 5, "priceOut": 22 },
+        { "model": "glm-5v-turbo", "vision": true, "contextTokens": 200000, "priceIn": 5, "priceOut": 22 },
+        { "model": "glm-5", "vision": false, "contextTokens": 200000, "priceIn": 4, "priceOut": 18 },
+        { "model": "glm-4.7-flashx", "vision": false, "contextTokens": 200000, "priceIn": 0.5, "priceOut": 3 },
         { "model": "glm-4.7-flash", "vision": false, "contextTokens": 200000, "priceIn": 0, "priceOut": 0 },
         { "model": "glm-4.7", "vision": false, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 },
-        { "model": "glm-4.6v", "vision": true, "contextTokens": 128000, "priceIn": 2, "priceOut": 6 },
+        { "model": "glm-4.6v-flashx", "vision": true, "contextTokens": 128000, "priceIn": 0.15, "priceOut": 1.5 },
+        { "model": "glm-4.6v-flash", "vision": true, "contextTokens": 128000, "priceIn": 0, "priceOut": 0 },
+        { "model": "glm-4.6v", "vision": true, "contextTokens": 128000, "priceIn": 1, "priceOut": 3 },
         { "model": "glm-4.6", "vision": false, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 },
         { "model": "glm-4.5v", "vision": true, "contextTokens": 64000, "priceIn": 2, "priceOut": 6 },
         { "model": "glm-4.5-air", "vision": false, "contextTokens": 128000, "priceIn": 0.8, "priceOut": 2 },
         { "model": "glm-4.5-flash", "vision": false, "contextTokens": 128000, "priceIn": 0, "priceOut": 0 },
-        { "model": "glm-4.5", "vision": false, "contextTokens": 128000, "priceIn": 2, "priceOut": 8 },
         { "model": "glm-4-plus", "vision": false, "contextTokens": 128000, "priceIn": 5, "priceOut": 5 },
+        { "model": "glm-4-long", "vision": false, "contextTokens": 1000000, "priceIn": 1, "priceOut": 1 },
         { "model": "glm-4-flash", "vision": false, "contextTokens": 128000, "priceIn": 0, "priceOut": 0 }
       ]
     },
     {
       "name": "阿里云百炼",
-      "hosts": ["dashscope.aliyuncs.com", "dashscope-intl.aliyuncs.com"],
+      "hosts": ["dashscope.aliyuncs.com"],
       "currency": "CNY",
       "models": [
-        { "model": "qwen3-max", "vision": false, "contextTokens": 256000, "priceIn": 6, "priceOut": 24 },
-        { "model": "qwen3-vl-plus", "vision": true, "contextTokens": 256000, "priceIn": 1, "priceOut": 10 },
-        { "model": "qwen3-coder-plus", "vision": false, "contextTokens": 1000000, "priceIn": 4, "priceOut": 16 },
-        { "model": "qwen-max", "vision": false, "contextTokens": 32000, "priceIn": 2.4, "priceOut": 9.6 },
-        { "model": "qwen-plus", "vision": false, "contextTokens": 128000, "priceIn": 0.8, "priceOut": 2 },
-        { "model": "qwen-turbo", "vision": false, "contextTokens": 1000000, "priceIn": 0.3, "priceOut": 0.6 },
-        { "model": "qwen-flash", "vision": false, "contextTokens": 1000000, "priceIn": 0.15, "priceOut": 1.5 },
-        { "model": "qwen-vl-max", "vision": true, "contextTokens": 128000, "priceIn": 3, "priceOut": 9 },
-        { "model": "qwen-vl-plus", "vision": true, "contextTokens": 128000, "priceIn": 1.5, "priceOut": 4.5 },
-        { "model": "deepseek-v3", "vision": false, "contextTokens": 64000, "priceIn": 2, "priceOut": 8 },
-        { "model": "deepseek-r1", "vision": false, "contextTokens": 64000, "priceIn": 4, "priceOut": 16 }
+        { "model": "qwen3.8-max", "vision": true, "contextTokens": 1000000, "priceIn": 12, "priceOut": 36 },
+        { "model": "qwen3.8-flash", "vision": true, "contextTokens": 1000000, "priceIn": 0.8, "priceOut": 2.7 },
+        { "model": "qwen3.7-plus", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 8 }
       ]
     },
     {
@@ -68,17 +81,26 @@
       "hosts": ["api.openai.com"],
       "currency": "USD",
       "models": [
+        { "model": "gpt-6-astra", "vision": true, "contextTokens": 1050000, "priceIn": 10, "priceOut": 50 },
+        { "model": "gpt-5.6-sol", "vision": true, "contextTokens": 1050000, "priceIn": 4, "priceOut": 20 },
+        { "model": "gpt-5.6-terra", "vision": true, "contextTokens": 1050000, "priceIn": 2, "priceOut": 12 },
+        { "model": "gpt-5.6-luna", "vision": true, "contextTokens": 1050000, "priceIn": 0.2, "priceOut": 1.2 },
+        { "model": "gpt-5.5", "vision": true, "contextTokens": 1050000, "priceIn": 5, "priceOut": 30 },
+        { "model": "gpt-5.4-mini", "vision": true, "contextTokens": 400000, "priceIn": 0.75, "priceOut": 4.5 },
+        { "model": "gpt-5.4-nano", "vision": true, "contextTokens": 400000, "priceIn": 0.2, "priceOut": 1.25 },
+        { "model": "gpt-5.4", "vision": true, "contextTokens": 1050000, "priceIn": 2.5, "priceOut": 15 },
         { "model": "gpt-5.2", "vision": true, "contextTokens": 400000, "priceIn": 1.75, "priceOut": 14 },
         { "model": "gpt-5.1", "vision": true, "contextTokens": 400000, "priceIn": 1.25, "priceOut": 10 },
         { "model": "gpt-5-mini", "vision": true, "contextTokens": 400000, "priceIn": 0.25, "priceOut": 2 },
         { "model": "gpt-5-nano", "vision": true, "contextTokens": 400000, "priceIn": 0.05, "priceOut": 0.4 },
         { "model": "gpt-5", "vision": true, "contextTokens": 400000, "priceIn": 1.25, "priceOut": 10 },
-        { "model": "gpt-4.1-mini", "vision": true, "contextTokens": 1000000, "priceIn": 0.4, "priceOut": 1.6 },
-        { "model": "gpt-4.1-nano", "vision": true, "contextTokens": 1000000, "priceIn": 0.1, "priceOut": 0.4 },
-        { "model": "gpt-4.1", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 8 },
+        { "model": "gpt-4.1-mini", "vision": true, "contextTokens": 1047576, "priceIn": 0.4, "priceOut": 1.6 },
+        { "model": "gpt-4.1-nano", "vision": true, "contextTokens": 1047576, "priceIn": 0.1, "priceOut": 0.4 },
+        { "model": "gpt-4.1", "vision": true, "contextTokens": 1047576, "priceIn": 2, "priceOut": 8 },
         { "model": "gpt-4o-mini", "vision": true, "contextTokens": 128000, "priceIn": 0.15, "priceOut": 0.6 },
         { "model": "gpt-4o", "vision": true, "contextTokens": 128000, "priceIn": 2.5, "priceOut": 10 },
         { "model": "o4-mini", "vision": true, "contextTokens": 200000, "priceIn": 1.1, "priceOut": 4.4 },
+        { "model": "o3-mini", "vision": false, "contextTokens": 200000, "priceIn": 1.1, "priceOut": 4.4 },
         { "model": "o3", "vision": true, "contextTokens": 200000, "priceIn": 2, "priceOut": 8 }
       ]
     },
@@ -87,12 +109,20 @@
       "hosts": ["api.anthropic.com"],
       "currency": "USD",
       "models": [
-        { "model": "claude-opus-4-1", "vision": true, "contextTokens": 200000, "priceIn": 15, "priceOut": 75 },
+        { "model": "claude-fable-5-2", "vision": true, "contextTokens": 1000000, "priceIn": 8, "priceOut": 40 },
+        { "model": "claude-opus-5-5", "vision": true, "contextTokens": 1000000, "priceIn": 4, "priceOut": 20 },
+        { "model": "claude-sonnet-5-5", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 10 },
+        { "model": "claude-haiku-5-5", "vision": true, "contextTokens": 1000000 },
+        { "model": "claude-fable-5-1", "vision": true, "contextTokens": 1000000, "priceIn": 10, "priceOut": 50 },
+        { "model": "claude-fable-5", "vision": true, "contextTokens": 1000000, "priceIn": 10, "priceOut": 50 },
+        { "model": "claude-opus-5", "vision": true, "contextTokens": 1000000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-opus-4-8", "vision": true, "contextTokens": 1000000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-opus-4-7", "vision": true, "contextTokens": 1000000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-opus-4-6", "vision": true, "contextTokens": 1000000, "priceIn": 5, "priceOut": 25 },
         { "model": "claude-opus-4-5", "vision": true, "contextTokens": 200000, "priceIn": 5, "priceOut": 25 },
-        { "model": "claude-opus-4-6", "vision": true, "contextTokens": 200000, "priceIn": 5, "priceOut": 25 },
+        { "model": "claude-sonnet-5", "vision": true, "contextTokens": 1000000, "priceIn": 2, "priceOut": 10 },
+        { "model": "claude-sonnet-4-6", "vision": true, "contextTokens": 1000000, "priceIn": 3, "priceOut": 15 },
         { "model": "claude-sonnet-4-5", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
-        { "model": "claude-sonnet-4-6", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
-        { "model": "claude-sonnet-4", "vision": true, "contextTokens": 200000, "priceIn": 3, "priceOut": 15 },
         { "model": "claude-haiku-4-5", "vision": true, "contextTokens": 200000, "priceIn": 1, "priceOut": 5 }
       ]
     },
@@ -103,11 +133,15 @@
       "models": [
         { "model": "claude-", "vision": true, "contextTokens": 200000 },
         { "model": "gpt-5", "vision": true, "contextTokens": 400000 },
-        { "model": "gpt-4.1", "vision": true, "contextTokens": 1000000 },
+        { "model": "gpt-4.1", "vision": true, "contextTokens": 1047576 },
         { "model": "gpt-4o", "vision": true, "contextTokens": 128000 },
+        { "model": "deepseek-v4", "vision": false, "contextTokens": 1000000 },
         { "model": "deepseek-", "vision": false, "contextTokens": 128000 },
-        { "model": "kimi-k2", "vision": false, "contextTokens": 256000 },
+        { "model": "kimi-k3", "vision": true, "contextTokens": 1048576 },
+        { "model": "kimi-k2", "vision": false, "contextTokens": 262144 },
+        { "model": "glm-5", "vision": false, "contextTokens": 200000 },
         { "model": "glm-4", "vision": false, "contextTokens": 128000 },
+        { "model": "qwen3.", "vision": true, "contextTokens": 1000000 },
         { "model": "qwen", "vision": false, "contextTokens": 128000 }
       ]
     }

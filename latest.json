@@ -1,15 +1,15 @@
 {
-  "version": "1.0.9",
-  "notes": "### 修复\r\n\r\n- **界面崩溃不再白屏**：此前渲染一旦出错整个界面会变成一片空白，而软件禁用了 F5，用户只能杀进程重开。现在会显示错误详情，并提供「复制错误信息」与「重新加载」按钮，会话和设置都不受影响\r\n- **国内检查更新下载失败**：更新源改为 Gitee 优先，并按固定优先级依次尝试。此前谁响应快用谁，国内常拿到 GitHub 的下载地址导致「检查到新版本但下不动」\r\n- **下载失败自动换镜像重试**：一个源下不动时自动改用其它源，界面会提示当前正在从哪个源下载\r\n- **错误提示区分「检查失败」与「下载失败」**：此前下载失败也显示成检查失败，且会把一长串下载链接直接甩给用户；现在文案对应实际环节，下载失败时还提供「打开发布页手动下载」入口\r\n\r\n升级安装不会影响已有配置和激活状态。\r\n\r\n---\r\n\r\n若你使用的是 1.0.7 及更早版本、自动更新一直失败，请到 https://gitee.com/tianxing111/abap-copilot-updates/releases 手动下载安装包覆盖安装，之后的自动更新即可正常工作。",
-  "pub_date": "2026-09-03T07:00:59.804Z",
+  "version": "1.0.10",
+  "notes": "ABAP Copilot 1.0.10 改善多会话使用和生成中断恢复，并更新模型预设。\r\n\r\n### 会话与消息\r\n\r\n- **切换页签时消息仍发往原会话**：读取引用文件期间切换会话，消息与附件保留原发送目标。\r\n- **每个会话独立保留草稿**：切换页签或进入设置再返回，文字、图片、粘贴附件和文件引用可恢复；校验或发送失败时保留草稿。\r\n- **重新生成保留历史**：在末尾追加重试，原回复及后续对话保留。\r\n- **生成进度自动保存**：问题先保存，回答定期落盘；重启后恢复已保存的内容，并标明失败、中止或未完成状态。导出也保留这些状态。\r\n- **浏览器式会话页签**：系统、模型与项目目录随会话绑定，多会话可以并行生成。\r\n\r\n### 模型与设置\r\n\r\n- **更新默认预设**：Kimi K3.1 Pro、GPT-5.6 Sol、Claude Opus 5.5，同步上下文和估算单价；已有档案由用户自行选择是否切换。\r\n- **兼容推理模型的连续工具调用**：补齐 Kimi/GLM 推理上下文和 Claude 签名思考块回传。\r\n- **支持 Kimi Code 订阅及 Anthropic 工作区**：Kimi Code 使用独立订阅接口；需要指定工作区的 Anthropic Key 可填写 Workspace ID。\r\n- **简化模型表单**：上下文与价目表刷新放进默认折叠的「高级设置」，币种与单价放进「费用统计」，明确费用为估算值、单价可留空。\r\n- **修正跨地区价格填充**：海外和中转地址不自动套用未核对的国内人民币单价，模型目录随版本同步至更新源。\r\n\r\n### 其它修复\r\n\r\n- 修复窗口标题栏拖动及最大化后双击无法还原的问题。\r\n- 补充会话恢复、模型目录和推理工具循环的自动回归检查。\r\n\r\n升级安装会保留已有配置、会话和激活状态。草稿保留用于程序运行期间的切换，未发送草稿不会在重启后恢复。",
+  "pub_date": "2026-11-10T02:36:02.430Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUM4b013d1YwZ001UFgyQ1g3dzF5SWRVelpXM0NlOThzclY3NFN4a3lEdlRiWVRvVkJLVWNVcVpRVEVEQmlVcldjakRzUmxJMThjNkM0YXBiai8zTlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDE4ODU2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC45X3g2NC1zZXR1cC5leGUKeHREek41a3Zya0JGMVo2K0RYQ0ZaK0pmZXVPVFR2citkOFgrVzJacUI2NlB6UHVzUGIxdEJHc2NiWUZzcGw3bXRsQUlyU0FHeUxPQXoxbUdnZDdtREE9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.9/ABAP.Copilot_1.0.9_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUNyRXpRNXovdkpPczFIU2p1dGJaOWdvMzNmRWJyU2N4UnZ5M0J1bi84T1FOTmFwQTZLVXRuZElGMDJhSEFUUVNKRFRDUWlndEljQ2ZKNkNlOGVHN1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mjc4MTU5CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4xMF94NjQtc2V0dXAuZXhlCnYvbUFadXduWGw1cVI3NnBreGRSQ0h3QTl1L0JWMk4wdFhhaDV0YUtHRjNYcVdJdTR1TkV1RWpsMEpEMGtNVTM3TUhCMVAyMFZDM1JrblhOakV2ckJnPT0K",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.10/ABAP.Copilot_1.0.10_x64-setup.exe"
     },
     "windows-x86_64-nsis": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUM4b013d1YwZ001UFgyQ1g3dzF5SWRVelpXM0NlOThzclY3NFN4a3lEdlRiWVRvVkJLVWNVcVpRVEVEQmlVcldjakRzUmxJMThjNkM0YXBiai8zTlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4NDE4ODU2CWZpbGU6QUJBUCBDb3BpbG90XzEuMC45X3g2NC1zZXR1cC5leGUKeHREek41a3Zya0JGMVo2K0RYQ0ZaK0pmZXVPVFR2citkOFgrVzJacUI2NlB6UHVzUGIxdEJHc2NiWUZzcGw3bXRsQUlyU0FHeUxPQXoxbUdnZDdtREE9PQo=",
-      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.9/ABAP.Copilot_1.0.9_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUZDhBajg0OFlQWUNyRXpRNXovdkpPczFIU2p1dGJaOWdvMzNmRWJyU2N4UnZ5M0J1bi84T1FOTmFwQTZLVXRuZElGMDJhSEFUUVNKRFRDUWlndEljQ2ZKNkNlOGVHN1FrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0Mjc4MTU5CWZpbGU6QUJBUCBDb3BpbG90XzEuMC4xMF94NjQtc2V0dXAuZXhlCnYvbUFadXduWGw1cVI3NnBreGRSQ0h3QTl1L0JWMk4wdFhhaDV0YUtHRjNYcVdJdTR1TkV1RWpsMEpEMGtNVTM3TUhCMVAyMFZDM1JrblhOakV2ckJnPT0K",
+      "url": "https://github.com/Oswin0213/abap-copilot-updates/releases/download/v1.0.10/ABAP.Copilot_1.0.10_x64-setup.exe"
     }
   }
 }
